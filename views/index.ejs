@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+      <br/>
+
+      <% for(var i=0; i<data.length; i++) {%>   
+
+        <div class="panel panel-primary">
+             
+             <div class="panel-heading">                  
+                  <pre>
+                     
+                    <%= data[i].question %>  
+                    
+                  </pre>
+             </div><!--.panel-heading-->
+            
+
+
+<form action="/engine" method="POST">   
+                <div class="panel-body">
+                    <div class="row">
+
+    <div class="funkyradio text-center">
+
+        <div class="funkyradio-primary">
+            <input type="radio" name="<%= i %>" id="radio" value="A"/>
+            <label for="radio1"><%= data[i].optiona %></label>
+        </div>
+
+        <div class="funkyradio-primary">
+            <input type="radio" name="<%= i %>" id="radio2" value="B"/>
+            <label for="radio2"><%= data[i].optionb %></label>
+        </div>
+        <div class="funkyradio-primary">
+            <input type="radio" name="<%= i %>" id="radio3" value="C"/>
+            <label for="radio3"><%= data[i].optionc %></label>
+        </div>
+
+    </div>
+     <% } %>
+
+      <hr/>
+
+    <div class="col-md-4 text-center"> 
+      <button type="submit" class="btn btn-default" id="sub">Submit
+      </button>
+    </div>        
+                           
+                    </div>
+                </div>
+
+    
+
+</form>
+        </div>
+</div>
+</div>
+
+
+
+</body>
+</html>
