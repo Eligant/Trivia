@@ -9,10 +9,9 @@ var mark=0;
 
 app.set('view engine', 'ejs')
 
-app.listen(2000, function() {
-  console.log('listening on 2000')
+app.listen(process.env.PORT || 5000, function() {
+  console.log('listening on 5000')
 })
-
 
 
 app.use(bodyParser.urlencoded({extended: true}))
